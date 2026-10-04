@@ -23,12 +23,14 @@ include __DIR__ . '/../../includes/header.php';
 ?>
 
 <div class="detail-wrap">
-  <div class="detail-img">🍗</div>
+  <div class="detail-img">
+    <img src="<?= BASE_URL ?>/assets/img/<?= clean($produk['gambar']) ?>" alt="<?= clean($produk['nama_produk']) ?>">
+  </div>
   <div class="detail-info">
     <div class="product-cat"><?= clean($produk['nama_kategori']) ?></div>
     <h1><?= clean($produk['nama_produk']) ?></h1>
-    <div class="price"><?= rupiah($produk['harga_jual']) ?></div>
     <p class="desc"><?= nl2br(clean($produk['deskripsi'])) ?></p>
+    <div class="price"><?= rupiah($produk['harga_jual']) ?></div>
 
     <?php if ($produk['stok'] <= 0): ?>
       <div class="note-box" style="background:#fdeaea;border-color:#f5c6c6;">😔 Maaf, stok menu ini sedang habis.</div>
@@ -44,9 +46,34 @@ include __DIR__ . '/../../includes/header.php';
         <input type="number" name="kuantitas" value="1" min="1" max="<?= $produk['stok'] ?>" required>
         <small>Stok tersedia: <?= $produk['stok'] ?></small>
       </div>
+
+      <?php if($produk['nama_kategori'] == 'Menu Utama' || $produk['nama_kategori'] == 'Paket Hemat'): ?>
+      <div class="form-group">
+        <label>Pilihan Ayam</label>
+        <div class="variant-options">
+          <label class="variant-item">
+            <input type="radio" name="varian" value="Dada" checked>
+            <span>Dada</span>
+          </label>
+          <label class="variant-item">
+            <input type="radio" name="varian" value="Paha Atas">
+            <span>Paha Atas</span>
+          </label>
+          <label class="variant-item">
+            <input type="radio" name="varian" value="Paha Bawah">
+            <span>Paha Bawah</span>
+          </label>
+          <label class="variant-item">
+            <input type="radio" name="varian" value="Paha">
+            <span>Sayap</span>
+          </label>
+        </div>
+      </div>
+      <?php endif; ?>
+      
       <div class="form-group">
         <label>Catatan (opsional)</label>
-        <textarea name="catatan" rows="2" placeholder="Contoh: level pedas 3, tanpa nasi, dsb."></textarea>
+        <textarea name="catatan" rows="2" placeholder="Contoh: ayam yang gede ya kak."></textarea>
       </div>
       <button type="submit" class="btn-primary">Tambah ke Keranjang</button>
     </form>
@@ -61,8 +88,13 @@ include __DIR__ . '/../../includes/header.php';
 <div class="product-grid">
   <?php foreach ($terkait as $p): ?>
     <a href="<?= BASE_URL ?>/modules/katalog/detail.php?id=<?= $p['id'] ?>" class="product-card">
-      <div class="product-thumb">🍗</div>
+      <div class="product-thumb">
+        <img src="<?= BASE_URL ?>/assets/img/<?= clean($p['gambar']) ?>" alt="<?= clean($p['nama_produk']) ?>">
+      </div>
       <div class="product-info">
+        <div class="product-cat">
+          <?= clean($produk['nama_kategori'])?>
+        </div>
         <h3><?= clean($p['nama_produk']) ?></h3>
         <div class="product-price"><?= rupiah($p['harga_jual']) ?></div>
       </div>

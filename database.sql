@@ -243,8 +243,8 @@ INSERT INTO kategori (nama_kategori, slug, deskripsi) VALUES
 
 -- 5 Produk sesuai permintaan
 INSERT INTO produk (kategori_id, kode_produk, nama_produk, slug, deskripsi, harga_beli, harga_jual, stok, stok_minimum, berat_gram, status) VALUES
-(1, 'GM-001', 'Ayam Geprek', 'ayam-geprek', 'Ayam crispy digeprek dengan sambal bawang pedas khas Geprek Mantul, disajikan hangat.', 8000, 15000, 50, 10, 350, 'aktif'),
-(2, 'GM-002', 'Paket Hemat Ayam + Nasi', 'paket-hemat-ayam-nasi', 'Satu porsi Ayam Geprek lengkap dengan nasi putih hangat, paket paling laris!', 10000, 20000, 40, 10, 550, 'aktif'),
+(1, 'GM-001', 'Ayam Geprek', 'ayam-geprek', 'Ayam geprek dengan ayam yang renyah dan gurih, disajikan bersama sambal yang pedas dan nikmat. Cocok untuk kamu yang ingin menikmati ayam geprek tanpa tambahan nasi.', 8000, 15000, 50, 10, 350, 'aktif'),
+(2, 'GM-002', 'Paket Hemat Ayam + Nasi', 'paket-hemat-ayam-nasi', 'Paket ayam geprek lengkap dengan nasi dan sambal. Ayam yang renyah dipadukan dengan nasi hangat dan sambal yang nikmat, paket paling laris!', 10000, 20000, 40, 10, 550, 'aktif'),
 (3, 'GM-003', 'Air Mineral', 'air-mineral', 'Air mineral kemasan botol 600ml, segar dan menyehatkan.', 2500, 5000, 100, 20, 600, 'aktif'),
 (3, 'GM-004', 'Teh Pucuk', 'teh-pucuk', 'Teh pucuk harum dalam kemasan botol, cocok menemani makan pedas.', 3500, 6000, 80, 20, 500, 'aktif'),
 (4, 'GM-005', 'Extra Sambal', 'extra-sambal', 'Tambahan sambal bawang khas Geprek Mantul untuk pecinta pedas maksimal.', 1000, 3000, 100, 20, 100, 'aktif');

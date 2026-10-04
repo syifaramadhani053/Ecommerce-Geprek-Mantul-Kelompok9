@@ -4,19 +4,48 @@ $pageTitle = "Tentang Kami";
 include __DIR__ . '/../../includes/header.php';
 ?>
 
-<h1 class="section-title">Tentang Geprek Mantul</h1>
-<div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;">
-  <p style="margin-bottom:14px;">
-    <strong>Geprek Mantul</strong> adalah usaha kuliner rumahan yang berfokus pada ayam geprek dengan sambal
-    bawang khas yang pedasnya nampol. Berawal dari dapur kecil, kini Geprek Mantul melayani pemesanan online
-    agar semua orang bisa menikmati ayam geprek favorit tanpa perlu antre.
-  </p>
-  <p style="margin-bottom:14px;">
-    Kami menyediakan menu Ayam Geprek, Paket Hemat Ayam + Nasi, minuman segar (Air Mineral & Teh Pucuk),
-    hingga Extra Sambal bagi pecinta pedas maksimal. Setiap pesanan diproses dengan sistem yang terintegrasi
-    dengan manajemen stok kami, sehingga menu yang tampil di katalog selalu sesuai dengan ketersediaan bahan.
-  </p>
-  <p>Terima kasih telah memilih Geprek Mantul. Selamat menikmati! 🍗🌶️</p>
+<div class="about-wrap">
+  <div class="about-img">
+    <img src="<?= BASE_URL ?>/assets/img/banner.jpg" alt="Ayam Geprek Mantul">
+  </div>
+
+  <div class="about-text">
+    <p>
+      <strong>Geprek Mantul</strong> Kami adalah usaha ayam geprek yang baru dirintis dengan tujuan menghadirkan makanan yang enak, terjangkau, dan cocok dinikmati oleh siapa saja. Kami menyajikan ayam geprek dengan ayam yang renyah, sambal yang dibuat dengan cita rasa khas, serta pilihan tingkat kepedasan yang bisa disesuaikan dengan selera pelanggan.
+    </p>
+    <p>
+      Sebagai usaha yang masih berkembang, kami terus berusaha menjaga kualitas rasa dan pelayanan agar setiap pelanggan mendapatkan pengalaman makan yang menyenangkan. Kami percaya bahwa dari usaha kecil ini, kami dapat terus berkembang dan menjadi salah satu pilihan favorit untuk menikmati ayam geprek.
+    <p>
+      Terima kasih sudah mendukung perjalanan usaha kami. Yuk, cobain ayam geprek kami dan rasakan sendiri cita rasanya!
+    </p>
+  </div>
+</div>
+
+<div class="value-grid">
+  <div class="value-card">
+    <div class="icon">🎯</div>
+    <h3>Visi Kami</h3>
+    <p>
+      Menjadi usaha ayam geprek yang dikenal luas karena rasa yang lezat, harga yang terjangkau, serta pelayanan yang ramah dan berkualitas.
+    </p>
+  </div>
+
+  <div class="value-card">
+    <div class="icon">🤝</div>
+    <h3>Misi Kami</h3>
+    <p>
+      Menyediakan ayam geprek dengan bahan yang berkualitas dan rasa yang konsisten, memberikan harga yang terjangkau, serta memberikan pelayanan yang ramah, cepat, dan praktis. Kami juga terus berinovasi untuk mengembangkan usaha agar dapat memenuhi kebutuhan dan selera pelanggan.
+    </p>
+  </div>
+
+  <div class="value-card">
+    <div class="icon">🌟</div>
+    <h3>Nilai Kami</h3>
+    <p>
+      Kami mengutamakan kualitas, kejujuran, dan kepuasan pelanggan. Kami selalu menjaga rasa dan kualitas makanan serta memberikan pelayanan yang ramah. Kami juga berkomitmen untuk terus berkembang dan memberikan yang terbaik bagi pelanggan.
+    </p>
+  </div>
+
 </div>
 
 <?php include __DIR__ . '/../../includes/footer.php'; ?>

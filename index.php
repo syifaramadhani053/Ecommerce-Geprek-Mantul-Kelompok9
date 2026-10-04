@@ -19,12 +19,14 @@ include __DIR__ . '/includes/header.php';
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Ayam Geprek Renyah, Sambel Nampol! 🌶️</h1>
-    <p>Geprek Mantul menghadirkan Ayam Geprek, Paket Hemat, hingga minuman segar. Pesan online sekarang, langsung diantar ke rumahmu!</p>
+    <h1>Ayam Geprek Mantul, Pedasnya Bikin Nagih! </h1>
+    <p>Crispy di luar, juicy di dalam, sambal bawang bikin nagih. Pesan sekarang dan rasakan sensai pedasnya!</p>
     <a href="<?= BASE_URL ?>/modules/katalog/index.php" class="btn-primary">Lihat Menu</a>
     <a href="<?= BASE_URL ?>/modules/pages/faq.php" class="btn-secondary">Cara Pemesanan</a>
   </div>
-  <div class="hero-img">🍗</div>
+  <div class="hero-img">
+    <img src="<?= BASE_URL ?>/assets/img/AyamGeprek.jpg" alt="Banner Ayam Geprek">
+  </div>
 </section>
 
 <?php if ($promoAktif): ?>
@@ -49,12 +51,15 @@ include __DIR__ . '/includes/header.php';
   <?php endforeach; ?>
 </div>
 
-<h2 class="section-title">Menu Favorit</h2>
-<p class="section-sub">Beberapa pilihan favorit pelanggan kami</p>
+<h2 class="section-title">Pilihan Menu</h2>
+<p class="section-sub">Beberapa pilihan menu kami</p>
 <div class="product-grid">
   <?php foreach ($produkUnggulan as $p): ?>
     <a href="<?= BASE_URL ?>/modules/katalog/detail.php?id=<?= $p['id'] ?>" class="product-card">
-      <div class="product-thumb">🍗</div>
+      <div class="product-thumb">
+        <img 
+        src="<?= BASE_URL ?>/assets/img/<?= clean($p['gambar']) ?>" alt="<?= clean($p['nama_produk']) ?>">
+      </div>
       <div class="product-info">
         <div class="product-cat"><?= clean($p['nama_kategori']) ?></div>
         <h3><?= clean($p['nama_produk']) ?></h3>
