@@ -10,13 +10,13 @@ Butuh PHP 8+ dengan ekstensi `pdo_mysql`.
 ## Peta File: mana yang boleh diedit?
 | File | Fungsi | Edit? |
 |---|---|---|
-| assets/css/style.css | Tampilan & warna (`--merah:#F01414`) | BEBAS diedit |
-| assets/js/script.js | Efek FAQ & konfirmasi hapus | BEBAS |
-| includes/header.php, footer.php | Navbar & footer | Teks/menu boleh, logika PHP jangan |
-| index.php, modules/pages/* | Beranda, Tentang, FAQ, Kontak | Teks boleh, query jangan |
-| modules/katalog/* | Katalog, search, detail | Teks boleh, query jangan |
-| modules/cart/* | Keranjang | Hati-hati (validasi stok) |
-| modules/checkout/proses.php | Buat pesanan, kurangi stok, catat mutasi_stok | JANGAN diubah (inti ERP, transaksi DB) |
+| assets/css/style.css | Tampilan & warna (`--merah:#F01414`)
+| assets/js/script.js | Efek FAQ & konfirmasi hapus
+| includes/header.php, footer.php | Navbar & footer
+| index.php, modules/pages/* | Beranda, Tentang, FAQ, Kontak
+| modules/katalog/* | Katalog, search, detail
+| modules/cart/* | Keranjang | Hati-hati (validasi stok) 
+| modules/checkout/proses.php | Buat pesanan, kurangi stok, catat mutasi_stok 
 | modules/auth/* | Login/daftar | Jangan ubah hash/session |
 | includes/functions.php | Fungsi bantu & hitung promo | Hanya rupiah()/status_label() |
 | config/* | Koneksi & konfigurasi | Hanya konstanta di atas |
@@ -28,5 +28,4 @@ Checkout -> `pesanan` + `detail_pesanan` (menyimpan HPP) -> stok `produk` berkur
 Kode `MANTUL10`: diskon 10%, min. belanja Rp25.000, maks. potongan Rp10.000, S&K ditampilkan di Beranda. Ubah/tambah promo di tabel `promo`.
 
 ## Catatan
-- `akun_rekening` & `jurnal_keuangan` sudah ada di DB tetapi belum dipakai (untuk modul admin/akuntansi berikutnya).
-- Panel admin belum dibuat (di luar permintaan kali ini).
+
