@@ -20,8 +20,10 @@
     <div>
       <h4>Kontak Kami</h4>
       <p>WhatsApp: 0812-3456-7890</p>
-      <p>Email: halo@geprekmantul.id</p>
-      <p>Instagram: @geprekmantul</p>
+      <p>Email: geprekmantul.house@gmail.com</p>
+      <p>Instagram:
+        <a href="https://www.instagram.com/geprekkmantull/" target="_blank" class="instagram-link">@geprekkmantull</a>
+      </p>
     </div>
   </div>
   <div class="footer-bottom">

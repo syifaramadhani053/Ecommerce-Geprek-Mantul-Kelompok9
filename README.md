@@ -1,31 +1,32 @@
 # Geprek Mantul — E-commerce + ERP Sederhana (PHP Native)
 
-## Instalasi
-1. Import `database.sql` (membuat database `db_ayam_erp`, 12 tabel, 5 produk, FAQ, promo MANTUL10).
-2. Edit `config/database.php` (host/user/pass MySQL).
-3. Edit `config/config.php` -> `BASE_URL` (mis. `/geprek-mantul`, atau `''` jika di root domain).
-4. Buka `http://localhost/geprek-mantul/`. Daftar akun lewat halaman Daftar.
-Butuh PHP 8+ dengan ekstensi `pdo_mysql`.
+Geprek Mantul adalah website penjualan makanan berbasis web yang dibuat untuk membantu kegiatan penjualan dan pengelolaan UMKM makanan. Website ini menyediakan berbagai menu makanan dan minuman, serta fitur pemesanan untuk pelanggan dan pengelolaan data untuk admin.
 
-## Peta File: mana yang boleh diedit?
-| File | Fungsi | Edit? |
-|---|---|---|
-| assets/css/style.css | Tampilan & warna (`--merah:#F01414`)
-| assets/js/script.js | Efek FAQ & konfirmasi hapus
-| includes/header.php, footer.php | Navbar & footer
-| index.php, modules/pages/* | Beranda, Tentang, FAQ, Kontak
-| modules/katalog/* | Katalog, search, detail
-| modules/cart/* | Keranjang | Hati-hati (validasi stok) 
-| modules/checkout/proses.php | Buat pesanan, kurangi stok, catat mutasi_stok 
-| modules/auth/* | Login/daftar | Jangan ubah hash/session |
-| includes/functions.php | Fungsi bantu & hitung promo | Hanya rupiah()/status_label() |
-| config/* | Koneksi & konfigurasi | Hanya konstanta di atas |
+# Fitur Website
+**Pelanggan**
+- Melihat menu dan detail produk.
+- Melihat promo.
+- Menambahkan produk ke keranjang.
+- Melakukan pemesanan.
+- Melakukan pembayaran.
+- Melihat riwayat pesanan.
+- Mengelola profil dan wishlist.
 
-## Alur ERP
-Checkout -> `pesanan` + `detail_pesanan` (menyimpan HPP) -> stok `produk` berkurang -> tercatat di `mutasi_stok` -> keranjang dikosongkan (satu transaksi DB).
+**Admin**
+- Mengelola produk dan kategori.
+- Mengelola pesanan pelanggan.
+- Mengelola stok barang.
+- Melihat laporan penjualan.
 
-## Promo
-Kode `MANTUL10`: diskon 10%, min. belanja Rp25.000, maks. potongan Rp10.000, S&K ditampilkan di Beranda. Ubah/tambah promo di tabel `promo`.
+# Teknologi
+- PHP
+- MySQL
+- HTML
+- CSS
+- JavaScript
 
-## Catatan
+# Tentang Project
+Project Geprek Mantul dibuat sebagai bagian dari tugas mata kuliah Rekayasa E-Bisnis. Website ini dikembangkan sebagai simulasi sistem penjualan dan pengelolaan UMKM makanan.
 
+# Pengembang
+Geprek Mantul Team

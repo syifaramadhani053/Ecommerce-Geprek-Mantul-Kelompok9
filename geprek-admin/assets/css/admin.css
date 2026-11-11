@@ -1,0 +1,300 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
+
+.layout { display: flex; min-height: 100vh; }
+
+/* ---------- Sidebar ---------- */
+.sidebar { width: 218px; background: #a60505; color: #fff; display: flex; flex-direction: column; flex-shrink: 0; position: sticky; top: 0; height: 100vh; }
+.brand { display: flex; align-items: center; gap: 12px; padding: 20px 14px 22px; font-weight: 700; font-size: 15px; }
+.brand img, .logo-fallback { width: 28px; height: 36px; object-fit: contain; font-size: 24px; line-height: 36px; }
+.sidebar nav { margin-top: 24px; }
+.sidebar nav a { display: flex; align-items: center; gap: 10px; padding: 0 12px; height: 34px; margin-bottom: 2px; color: #fff; text-decoration: none; font-size: 9px; font-weight: 600; }
+.sidebar nav a svg { width: 20px; height: 20px; flex-shrink: 0; }
+.sidebar nav a.active { background: #420000; height: 34px; }
+.sidebar nav a:hover:not(.active) { background: rgba(0,0,0,.15); }
+.logout { margin-top: auto; display: flex; align-items: center; gap: 36px; padding: 0 20px 30px; color: #fff; text-decoration: none; font-weight: 600; font-size: 12px; }
+.logout svg { width: 24px; height: 24px; }
+
+/* ---------- Konten ---------- */
+.content { flex: 1; min-width: 0; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 28px 46px 14px 45px; border-bottom: 1px solid #333; margin: 0 10px 0 10px; height: 83px; }
+.topbar h1 { color: #ff0000; font-size: 22px; font-weight: 700; margin-top: 14px; }
+.user { display: flex; align-items: center; gap: 8px; font-size: 9px; font-weight: 600; align-self: flex-start; margin-top: -4px; }
+
+.body { padding: 52px 40px 40px 45px; }
+.intro { font-size: 8px; color: #666; margin-bottom: 14px; }
+
+.cards { display: flex; gap: 22px; margin-bottom: 24px; }
+.card { flex: 1; background: #f4eae8; height: 84px; padding: 10px 12px; position: relative; max-width: 156px; min-width: 150px; }
+.card-icon { position: absolute; top: 9px; left: 9px; width: 30px; height: 24px; background: #f6b6b6; display: flex; align-items: center; justify-content: center; }
+.card-icon svg { width: 16px; height: 16px; }
+.card-info { margin-left: 36px; display: flex; flex-direction: column; }
+.card-label { font-size: 8px; color: #555; font-weight: 500; }
+.card-info strong { font-size: 16px; color: #111; font-weight: 600; line-height: 1.2; }
+.card-growth { position: absolute; bottom: 10px; left: 22px; font-size: 7px; color: #666; }
+.card-growth b { color: #16a34a; }
+.card-growth { color: #666; }
+.card-growth:not(.down)::first-letter { color: #16a34a; }
+.card-growth.down b { color: #dc2626; }
+
+.panel { background: #f4eae8; width: 450px; max-width: 100%; padding: 22px 15px 30px; margin-left: 8px; }
+.panel h2 { font-size: 13px; font-weight: 600; color: #444; margin: 8px 0 14px 17px; }
+table { width: 100%; border-collapse: collapse; font-size: 8px; }
+thead tr { background: #e8d6d4; }
+th { padding: 12px 10px; font-weight: 700; color: #444; text-align: center; }
+td { padding: 22px 10px; text-align: center; border-bottom: 1px solid #cfc2c0; }
+tbody tr:last-child td { border-bottom: none; }
+.kosong { color: #888; }
+
+.badge { display: inline-block; min-width: 68px; padding: 6px 8px; font-size: 8px; font-weight: 600; }
+.badge.yellow { background: #f3df8f; color: #b7791f; }
+.badge.green  { background: #bdf0cc; color: #16a34a; }
+.badge.pink   { background: #f0b4cf; color: #d6336c; }
+.badge.blue   { background: #bfdbfe; color: #1d4ed8; }
+.badge.gray   { background: #ddd; color: #666; }
+
+/* ---------- Login ---------- */
+.login-body { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #F01414; }
+.login-card { background: #fff; width: 340px; padding: 32px 28px; border-radius: 8px; display: flex; flex-direction: column; }
+.login-brand img {width: 42px;height: 42px;object-fit: contain;display: block;flex-shrink: 0;}
+.login-brand { display: flex; align-items: center; gap: 10px; color: #a60505; font-weight: 700; margin-bottom: 18px; }
+.login-card h1 { color: #c30f0f; font-size: 22px; margin-bottom: 14px; }
+.login-card label { font-size: 12px; font-weight: 500; margin: 10px 0 4px; }
+.login-card input { padding: 10px 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 13px; }
+.login-card input:focus { outline: 2px solid #f6b6b6; border-color: #a60505; }
+.login-card button { margin-top: 20px; padding: 11px; background: #F01414; color: #fff; border: 0; border-radius: 4px; font-family: inherit; font-weight: 600; cursor: pointer; }
+.login-card button:hover { background: #c30f0f; }
+.login-error { background: #fde8e8; color: #b42318; padding: 8px 10px; font-size: 12px; border-radius: 4px; }
+
+/* ---------- Halaman Pesanan / Produk / Laporan ---------- */
+.body-wide { padding: 18px 14px 40px 12px; }
+.searchbar { display: flex; align-items: center; gap: 16px; background: #eee3e2; height: 50px; padding: 0 16px; margin-bottom: 34px; }
+.searchbar svg { width: 20px; height: 20px; flex-shrink: 0; }
+.searchbar input { flex: 1; border: 0; background: transparent; font-family: inherit; font-size: 11px; outline: none; color: #333; }
+.searchbar input::placeholder { color: #999; }
+.panel-mid { width: 493px; margin: 0 0 0 25px; }
+.panel-mid th, .panel-mid td { padding-left: 4px; padding-right: 4px; }
+
+.flash { background: #fff3cd; color: #7a5b00; font-size: 10px; padding: 8px 12px; margin-bottom: 14px; }
+
+.tabel-produk { width: 100%; border: 1px solid #ddd; margin-top: 10px; }
+.tabel-produk thead tr { background: #e0e0e0; }
+.tabel-produk th { font-size: 10px; padding: 14px 8px; }
+.tabel-produk td { font-size: 9px; font-weight: 700; color: #444; padding: 8px; border: 1px solid #e5d4d4; }
+.tabel-produk tr.nonaktif td { opacity: .5; }
+.foto { width: 82px; height: 88px; margin: 0 auto; background: #f1e6e6; border-radius: 8px; overflow: hidden; }
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aksi { white-space: nowrap; }
+.aksi form { display: inline; }
+.btn { display: inline-block; border: 0; font-family: inherit; font-size: 7px; font-weight: 700; padding: 7px 14px; cursor: pointer; text-decoration: none; }
+.btn-edit { background: #e7e1e1; color: #d00000; }
+.btn-hapus { background: #ff0000; color: #fff; }
+.form-edit { display: flex; flex-direction: column; max-width: 360px; margin-top: 20px; }
+.form-edit label { font-size: 10px; font-weight: 600; margin: 10px 0 4px; }
+.form-edit input, .form-edit select { padding: 9px 10px; border: 1px solid #ccc; font-family: inherit; font-size: 11px; }
+.form-aksi { margin-top: 18px; display: flex; gap: 8px; }
+.form-aksi .btn { font-size: 10px; padding: 9px 18px; }
+
+.filter-tgl { display: flex; justify-content: space-between; align-items: center; background: #ede4e3; height: 42px; padding: 0 46px; margin-bottom: 20px; font-size: 8px; font-weight: 600; color: #666; }
+.filter-tgl input { font-family: inherit; font-size: 8px; padding: 3px 4px; border: 1px solid #d5c6c5; background: #fff; }
+.filter-tgl button { font-family: inherit; font-size: 8px; font-weight: 600; background: #a60505; color: #fff; border: 0; padding: 5px 10px; cursor: pointer; }
+.cards-lap { gap: 22px; margin: 0 0 40px 18px; }
+.card-lap { background: #f3eae8; width: 155px; height: 81px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+.card-lap span { font-size: 9px; font-weight: 600; color: #777; }
+.card-lap strong { font-size: 11px; font-weight: 600; color: #111; }
+.lap-bawah { display: flex; gap: 58px; margin-left: 18px; }
+.kotak { background: #f3eae8; width: 215px; padding: 18px 16px 20px; }
+.kotak h3 { color: #f00; font-size: 9px; font-weight: 600; margin-bottom: 12px; }
+.baris { display: flex; justify-content: space-between; font-size: 8.5px; font-weight: 600; color: #222; margin-bottom: 8px; }
+.judul-baris { margin-bottom: 8px; }
+
+
+/* =========================================
+   PERBAIKAN TAMPILAN DASHBOARD
+   Tempel di bagian paling bawah admin.css
+========================================= */
+
+/* Layout utama */
+.layout {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    flex: 0 0 218px;
+    width: 218px;
+    min-width: 218px;
+}
+
+.content {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 0;
+}
+
+/* Bagian atas dashboard */
+.topbar {
+    padding: 22px 30px 14px;
+    margin: 0 10px;
+    min-width: 0;
+}
+
+.topbar h1 {
+    font-size: 22px;
+}
+
+.user {
+    font-size: 12px;
+}
+
+/* Area konten */
+.body {
+    width: 100%;
+    padding: 32px 30px 40px;
+    min-width: 0;
+}
+
+.intro {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Kartu statistik */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 28px;
+}
+
+.card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    min-height: 100px;
+    height: auto;
+    padding: 14px;
+}
+
+.card-label {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.card-info strong {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.card-growth {
+    font-size: 10px;
+}
+
+/* Panel tabel */
+.panel {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.panel h2 {
+    font-size: 16px;
+    margin: 0 0 18px;
+}
+
+/* Tabel */
+.panel table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.panel th {
+    padding: 14px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.panel td {
+    padding: 16px 10px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.panel .badge {
+    min-width: 75px;
+    padding: 7px 9px;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+/* Agar tabel tetap bisa digeser jika kolom banyak.
+   Jika tabel dibungkus .table-wrapper, scroll hanya
+   terjadi di area tabel, bukan seluruh halaman. */
+.table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper table {
+    min-width: 650px;
+}
+
+/* Layar laptop kecil dan tablet */
+@media (max-width: 1100px) {
+    .body {
+        padding: 28px 22px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topbar {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+/* Layar HP */
+@media (max-width: 700px) {
+    .sidebar {
+        flex: 0 0 180px;
+        width: 180px;
+        min-width: 180px;
+    }
+
+    .body {
+        padding: 20px 14px;
+    }
+
+    .topbar {
+        padding: 18px 14px;
+    }
+
+    .topbar h1 {
+        font-size: 18px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card {
+        min-height: 90px;
+    }
+
+    .panel {
+        padding: 16px 12px;
+    }
+}

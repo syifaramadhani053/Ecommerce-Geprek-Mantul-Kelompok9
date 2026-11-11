@@ -6,11 +6,17 @@ require_once __DIR__ . '/../../config/config.php';
 require_login();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $produk_id = $_POST['produk_id'];
-    $kuantitas = max(1, (int)$_POST['kuantitas']);
+    $produk_id = (int) ($_POST['produk_id'] ?? 0);
+    $kuantitas = max(1, (int) ($_POST['kuantitas'] ?? 1));
     $catatan = trim($_POST['catatan'] ?? '');
+    $varian = trim($_POST['varian'] ?? '');
 
-    $stmtProduk = $pdo->prepare("SELECT stok FROM produk WHERE id = ? AND status='aktif'");
+    $stmtProduk = $pdo->prepare("
+        SELECT p.stok, k.nama_kategori
+        FROM produk p
+        JOIN kategori k ON p.kategori_id = k.id
+        WHERE p.id = ? AND p.status = 'aktif'
+    ");
     $stmtProduk->execute([$produk_id]);
     $produk = $stmtProduk->fetch();
 
@@ -24,8 +30,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         redirect(BASE_URL . '/modules/katalog/detail.php?id=' . $produk_id);
     }
 
-    $stmt = $pdo->prepare("INSERT INTO keranjang (pengguna_id, produk_id, kuantitas, catatan) VALUES (?,?,?,?)");
-    $stmt->execute([$_SESSION['pengguna_id'], $produk_id, $kuantitas, $catatan]);
+    $kategoriAyam = ['Menu Utama', 'Paket Hemat'];
+    if (in_array($produk['nama_kategori'], $kategoriAyam, true)) {
+        $varianValid = ['Dada', 'Paha Atas', 'Paha Bawah', 'Sayap'];
+
+        if (!in_array($varian, $varianValid, true)) {
+            set_flash('danger', 'Silakan pilih bagian ayam terlebih dahulu.');
+            redirect(BASE_URL . '/modules/katalog/detail.php?id=' . $produk_id);
+        }
+    } else {
+        $varian = '';
+    }
+
+    // Simpan produk beserta pilihan ayam dan catatan
+    $stmt = $pdo->prepare("
+    INSERT INTO keranjang
+        (pengguna_id, produk_id, kuantitas, varian, catatan)
+    VALUES (?, ?, ?, ?, ?)
+    ");
+    $stmt->execute([
+        $_SESSION['pengguna_id'],
+        $produk_id,
+        $kuantitas,
+        $varian !== '' ? $varian : null,
+        $catatan
+    ]);
+
 
     set_flash('success', 'Menu berhasil ditambahkan ke keranjang.');
     redirect(BASE_URL . '/modules/cart/index.php');

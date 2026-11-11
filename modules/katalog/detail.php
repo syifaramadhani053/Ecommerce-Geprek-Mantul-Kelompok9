@@ -39,44 +39,52 @@ include __DIR__ . '/../../includes/header.php';
     <?php endif; ?>
 
     <?php if (is_login() && $produk['stok'] > 0): ?>
-    <form action="<?= BASE_URL ?>/modules/cart/add.php" method="POST">
-      <input type="hidden" name="produk_id" value="<?= $produk['id'] ?>">
-      <div class="form-group">
+  
+  <form action="<?= BASE_URL ?>/modules/cart/add.php" method="POST">
+    <input type="hidden"name="produk_id"value="<?= (int) $produk['id'] ?>">
+    <div class="form-group">
         <label>Jumlah</label>
-        <input type="number" name="kuantitas" value="1" min="1" max="<?= $produk['stok'] ?>" required>
-        <small>Stok tersedia: <?= $produk['stok'] ?></small>
-      </div>
+        <input type="number"name="kuantitas"value="1"min="1"max="<?= (int) $produk['stok'] ?>"required>
+        <small>Stok tersedia: <?= (int) $produk['stok'] ?></small>
+    </div>
 
-      <?php if($produk['nama_kategori'] == 'Menu Utama' || $produk['nama_kategori'] == 'Paket Hemat'): ?>
-      <div class="form-group">
-        <label>Pilihan Ayam</label>
-        <div class="variant-options">
-          <label class="variant-item">
-            <input type="radio" name="varian" value="Dada" checked>
-            <span>Dada</span>
-          </label>
-          <label class="variant-item">
-            <input type="radio" name="varian" value="Paha Atas">
-            <span>Paha Atas</span>
-          </label>
-          <label class="variant-item">
-            <input type="radio" name="varian" value="Paha Bawah">
-            <span>Paha Bawah</span>
-          </label>
-          <label class="variant-item">
-            <input type="radio" name="varian" value="Paha">
-            <span>Sayap</span>
-          </label>
+    <?php if (
+        in_array($produk['nama_kategori'], ['Menu Utama', 'Paket Hemat'],true)
+    ): ?>
+        <div class="form-group">
+          <label>Pilihan Ayam</label>
+            <div class="variant-options">
+              <label class="variant-item">
+                <input type="radio" name="varian" value="Dada" checked>
+                <span>Dada</span>
+              </label>
+
+              <label class="variant-item">
+                <input type="radio" name="varian" value="Paha Atas">
+                <span>Paha Atas</span>
+              </label>
+
+              <label class="variant-item">
+                <input type="radio" name="varian" value="Paha Bawah">
+                <span>Paha Bawah</span>
+              </label>
+
+              <label class="variant-item">
+                <input type="radio" name="varian" value="Sayap">
+                <span>Sayap</span>
+              </label>
+            </div>
         </div>
-      </div>
-      <?php endif; ?>
-      
-      <div class="form-group">
+    <?php endif; ?>
+
+    <div class="form-group">
         <label>Catatan (opsional)</label>
-        <textarea name="catatan" rows="2" placeholder="Contoh: ayam yang gede ya kak."></textarea>
-      </div>
-      <button type="submit" class="btn-primary">Tambah ke Keranjang</button>
-    </form>
+        <textarea name="catatan" rows="2" placeholder="Contoh: tulis catatan di sini ya kak."></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Tambah ke Keranjang</button>
+  </form>
+
     <?php elseif (!is_login()): ?>
       <a href="<?= BASE_URL ?>/modules/auth/login.php" class="btn-primary">Masuk untuk Memesan</a>
     <?php endif; ?>
