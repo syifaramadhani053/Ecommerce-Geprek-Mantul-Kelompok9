@@ -1,0 +1,222 @@
+/* =====================================================================
+   FILE: admin/assets/admin.css -- TAMPILAN PANEL ADMIN
+   BOLEH DIEDIT BEBAS (murni tampilan, tidak memengaruhi logika PHP/database).
+   Ubah warna di :root. Gaya mengikuti desain admin awal (sidebar merah, judul
+   merah, kartu krem, font Poppins) dengan font lebih besar & ruang terisi.
+   ===================================================================== */
+:root{--merah:#F01414;--merah-tua:#a30505;--merah-gelap:#5c0000;--krem:#f5ebe8;--krem-tua:#e9d9d5;--garis:#e6d3ce;
+--teks:#2b2323;--abu:#6f6360;--hijau:#1b8a3a;--biru:#1d4ed8;--kuning:#b45309;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins','Segoe UI',Arial,sans-serif;font-size:15.5px;color:var(--teks);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.ic{width:20px;height:20px;flex-shrink:0}
+.shell{display:flex;min-height:100vh}
+/* Sidebar */
+.sidebar{width:262px;background:var(--merah-tua);color:#fff;display:flex;flex-direction:column;padding:18px 12px;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:12px;padding:6px 10px 18px;font-weight:700;font-size:17px}
+.brand img{width:40px;height:46px;object-fit:contain;border-radius:6px}
+.grup{font-size:11.5px;font-weight:700;letter-spacing:.8px;color:#ffb3b3;padding:16px 12px 6px}
+.sidebar nav a,.keluar{display:flex;align-items:center;gap:13px;padding:11px 14px;border-radius:10px;font-weight:600;font-size:15px;margin-bottom:3px;color:#fff;position:relative}
+.sidebar nav a:hover,.keluar:hover{background:rgba(255,255,255,.12)}
+.sidebar nav a.aktif{background:var(--merah-gelap);box-shadow:inset 4px 0 0 #fff}
+.bdg{margin-left:auto;background:#fff;color:var(--merah-tua);font-style:normal;font-size:12px;font-weight:700;border-radius:20px;padding:1px 9px}
+.keluar{margin-top:auto}
+/* Main */
+.main{flex:1;min-width:0;background:#fff}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 32px;border-bottom:1.5px solid var(--teks);margin:0 12px}
+.topbar h1{color:var(--merah);font-size:27px;font-weight:700;line-height:1.2}
+.sub{color:var(--abu);font-size:14px}
+.user{display:flex;align-items:center;gap:11px}.user strong{display:block;font-size:15px}.user small{color:var(--abu);text-transform:capitalize}
+.avatar{width:42px;height:42px;border-radius:50%;background:#5b5b5b;color:#fff;display:flex;align-items:center;justify-content:center}
+.burger{display:none;background:none;border:none;color:var(--merah-tua);cursor:pointer}
+.isi{padding:26px 32px 40px}
+/* Kartu statistik */
+.kartu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;margin-bottom:24px}
+.kartu{background:var(--krem);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.kartu-ic{width:46px;height:46px;border-radius:10px;background:#f4b6b6;color:var(--merah-tua);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.kartu-ic .ic{width:24px;height:24px}
+.kartu-l{font-size:14px;color:var(--abu)}.kartu-n{font-size:25px;font-weight:700;line-height:1.25}
+.kartu-c{font-size:13px;color:var(--abu);margin-top:4px}.naik{color:var(--hijau);font-weight:600}.turun{color:#c0392b;font-weight:600}
+.kartu.bahaya .kartu-ic{background:var(--merah);color:#fff}
+/* Panel & tabel */
+.panel{background:var(--krem);border-radius:16px;padding:24px;margin-bottom:24px}
+.panel>h2,.panel-head h2{font-size:19px;font-weight:600;margin-bottom:14px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}.panel-head h2{margin:0}
+.putih{background:#fff;border:1px solid var(--garis)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:24px;margin-bottom:24px}.grid2>.panel{margin-bottom:0}
+.tbl{overflow-x:auto;border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:var(--krem-tua);padding:13px 14px;text-align:left;font-weight:600;font-size:14.5px;white-space:nowrap}
+td{padding:13px 14px;border-bottom:1px solid var(--garis);vertical-align:middle}
+tr:hover td{background:rgba(255,255,255,.55)}
+.c{text-align:center}.r{text-align:right}
+.thumb{width:62px;height:62px;border-radius:12px;object-fit:cover;display:block}
+.thumb-kosong{background:var(--krem-tua);color:var(--abu);display:flex;align-items:center;justify-content:center}
+/* Pil status */
+.pill{display:inline-block;padding:5px 15px;border-radius:8px;font-weight:600;font-size:13.5px;white-space:nowrap}
+.pill-pink{background:#f5b5cf;color:#b3124f}.pill-kuning{background:#fde68a;color:#92400e}.pill-biru{background:#bfdbfe;color:#1d4ed8}
+.pill-hijau{background:#b9f6ca;color:#1b8a3a}.pill-abu{background:#e0e0e0;color:#666}.pill-merah{background:#fecaca;color:#b91c1c}
+/* Form */
+.form-group{margin-bottom:16px}.form-group label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea,.cari input,.filter select,.filter input,.inline-status{width:100%;padding:11px 13px;border:1px solid #cbbab5;border-radius:9px;font-family:inherit;font-size:15px;background:#fff}
+.form-group small{color:var(--abu);font-size:13px}
+.baris{display:flex;gap:16px;flex-wrap:wrap}.baris>.form-group{flex:1;min-width:190px}
+.cari{display:flex;align-items:center;gap:10px;background:var(--krem-tua);border-radius:10px;padding:6px 16px;margin-bottom:22px}
+.cari input{border:none;background:transparent;padding:10px 4px}.cari input:focus{outline:none}
+.filter{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}.filter>*{width:auto;min-width:170px}
+.inline-status{width:auto;min-width:140px;padding:7px 10px;font-weight:600;font-size:14px}
+/* Tombol */
+.btn{display:inline-block;padding:10px 20px;border-radius:9px;border:none;cursor:pointer;font-weight:600;font-size:14.5px;font-family:inherit;text-align:center}
+.btn-merah{background:var(--merah);color:#fff}.btn-merah:hover{background:var(--merah-tua)}
+.btn-abu{background:#e6dcd9;color:var(--merah-tua)}.btn-abu:hover{background:#d9ccc8}
+.btn-gelap{background:var(--merah-tua);color:#fff}.btn-bahaya{background:#dc2626;color:#fff}
+.btn-sm{padding:6px 13px;font-size:13px;border-radius:7px}
+.aksi-grup{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+/* Alert */
+.alert{display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:11px;margin-bottom:20px;font-size:14.5px}
+.alert-success{background:#e6f9ee;color:#1c7c41;border:1px solid #b6ecc9}.alert-danger{background:#fdeaea;color:#c0392b;border:1px solid #f5c6c6}
+.alert-warn{background:#fff4d6;color:#8a5a00;border:1px solid #f3d98b}.alert-warn a{font-weight:700;text-decoration:underline}
+/* Grafik batang CSS */
+.chart{display:flex;align-items:flex-end;gap:12px;height:210px;padding-top:10px}
+.chart .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:6px;font-size:12px;color:var(--abu)}
+.chart .b i{display:block;width:100%;max-width:54px;background:var(--merah);border-radius:7px 7px 0 0;min-height:3px}
+.chart .b span{font-weight:600;color:var(--teks);font-size:12px}
+.hbar{margin-bottom:13px}.hbar .t{display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:5px}
+.hbar .g{background:#fff;border-radius:8px;height:11px;overflow:hidden}.hbar .g i{display:block;height:100%;background:var(--merah);border-radius:8px}
+/* Timeline status pesanan */
+.langkah{display:flex;gap:0;margin:8px 0 22px;flex-wrap:wrap}
+.langkah div{flex:1;min-width:120px;text-align:center;position:relative;padding-top:38px;font-size:13.5px;font-weight:600;color:var(--abu)}
+.langkah div:before{content:attr(data-n);position:absolute;top:0;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;background:#d8c9c5;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.langkah div.on{color:var(--merah-tua)}.langkah div.on:before{background:var(--merah)}
+.langkah div.now:before{box-shadow:0 0 0 5px rgba(240,20,20,.2)}
+.paging{display:flex;gap:6px;justify-content:center;margin-top:16px}.paging a{padding:6px 13px;border-radius:7px;background:#fff;border:1px solid var(--garis);font-weight:600}.paging a.on{background:var(--merah);color:#fff;border-color:var(--merah)}
+.ket{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:15px}.ket dt{color:var(--abu)}.ket dd{font-weight:500}
+.tab{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}.tab a{padding:9px 20px;border-radius:9px;background:var(--krem);font-weight:600;color:var(--merah-tua)}.tab a.on{background:var(--merah);color:#fff}
+.kosong{text-align:center;color:var(--abu);padding:28px}
+.login-bg{min-height:100vh;background:var(--merah);display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{background:#fff;border-radius:10px;padding:34px;width:100%;max-width:400px}
+.login-box .brand{color:var(--merah-tua);padding:0 0 18px}.login-box h2{color:#b30b0b;margin-bottom:18px}
+@media(max-width:900px){.sidebar{position:fixed;left:-280px;z-index:30;transition:.25s;height:100vh}.sidebar.buka{left:0}.burger{display:block}.topbar,.isi{padding-left:16px;padding-right:16px}.topbar{margin:0}.grid2{grid-template-columns:1fr}.ket{grid-template-columns:1fr}}
+
+
+
+
+/* =========================
+   HALAMAN KELOLA PRODUK
+========================= */
+.filter-produk {display: flex; align-items: center; gap: 12px; margin-bottom: 20px;}
+.pencarian-produk {display: flex; align-items: center; gap: 10px; flex: 1; min-width: 180px; height: 44px; padding: 0 13px; border: 1px solid #ddd; border-radius: 8px;background: #fff;}
+.pencarian-produk svg {width: 19px;height: 19px;color: #888;flex-shrink: 0;}
+.pencarian-produk input {width: 100%;border: none;outline: none;background: transparent;font: inherit;font-size: 14px;}
+.filter-produk select {min-width: 165px;height: 44px;padding: 0 12px;border: 1px solid #ddd;border-radius: 8px;background: #fff;font: inherit;font-size: 14px;}
+.reset-pencarian-produk {color: #777;font-size: 13px;text-decoration: none;}
+.reset-pencarian-produk:hover {color: #dc2626;}
+
+/* Judul dan Daftar Produk */
+.panel-daftar-produk {overflow: hidden;}
+.judul-daftar-produk {align-items: center;}
+.judul-daftar-produk h2 {margin-bottom: 3px;}
+.judul-daftar-produk span {color: #888;font-size: 13px;}
+
+/* Tabel Produk */
+.tabel-produk {width: 100%;border-collapse: collapse;background: #ffffff;border: 1px solid #e5e5e5;}
+.tabel-produk th {padding: 15px 12px;background: #f5f5f5;color: #444;font-size: 13px;font-weight: 600;white-space: nowrap;border: 1px solid #e5e5e5;}
+.tabel-produk td {padding: 13px 12px;background: #ffffff;border: 1px solid #e5e5e5;font-size: 14px;vertical-align: middle;}
+.tabel-produk tbody tr:hover,
+.tabel-produk tbody tr:hover td {background: #ffffff;}
+
+/* Foto dan Stok */
+.foto-produk {width: 54px;height: 54px;margin: auto;overflow: hidden;border-radius: 9px;background: #f5f5f5;}
+.foto-produk img {width: 100%;height: 100%;object-fit: cover;}
+.identitas-produk {display: flex;flex-direction: column;gap: 4px;}
+.identitas-produk strong {color: #292929;font-size: 14px;}
+.identitas-produk small {color: #999;font-size: 12px;}
+.nama-kategori-produk {color: #555;font-size: 13px;}
+.harga-produk {color: #333;white-space: nowrap;}
+.informasi-stok-produk {display: flex;flex-direction: column;align-items: center;gap: 4px;}
+.informasi-stok-produk strong {color: #333;font-size: 15px;}
+.informasi-stok-produk span {padding: 3px 8px;border-radius: 20px;font-size: 11px;font-weight: 600;}
+.stok-aman {color: #15803d;background: #dcfce7;}
+.stok-menipis {color: #b45309;background: #fef3c7;}
+.stok-habis {color: #dc2626;background: #fee2e2;}
+
+/* Tombol Edit dan Hapus */
+.tombol-aksi-produk {display: flex;align-items: center;justify-content: center;gap: 8px;}
+.tombol-ikon-aksi {display: inline-flex;align-items: center;justify-content: center;width: 34px;height: 34px;padding: 0;border: 1px solid transparent;border-radius: 7px;cursor: pointer;text-decoration: none;transition: background 0.2s, color 0.2s;}
+.tombol-ikon-aksi svg {width: 17px;height: 17px;}
+.tombol-edit-produk {color: #bd7815;background: #fff0d9;}
+.tombol-edit-produk:hover {background: #bd7815;color: #fff;}
+.tombol-hapus-ikon {color: #c62828;background: #ffe5e5;}
+.tombol-hapus-ikon:hover {background: #c62828;color: #fff;}
+
+/* Responsive Produk */
+@media (max-width: 768px) {
+    .filter-produk {flex-wrap: wrap;}
+    .pencarian-produk {flex-basis: 100%;}
+    .filter-produk select {flex: 1;}
+    .panel-daftar-produk .tbl {overflow-x: auto;}
+    .tabel-produk {min-width: 850px;}
+}
+
+/* =========================
+   HALAMAN KELOLA FAQ
+========================= */
+.faq-page {padding: 24px;color: #333;}
+/* Card */
+.faq-form-card,
+.faq-list-card {background: #fff; padding: 24px; margin-bottom: 24px; border-radius: 12px;border: 1px solid #eee;}
+/* Judul Card */
+.faq-card-header {display: flex;justify-content: space-between;align-items: center;margin-bottom: 20px;gap: 12px;}
+.faq-card-header h3 {font-size: 20px; margin-bottom: 4px;}
+.faq-card-header p {font-size: 14px;color: #777;}
+/* Form */
+.faq-form-group {margin-bottom: 18px;}
+.faq-form-group label {display: block; font-size: 15px; font-weight: 600; margin-bottom: 8px;}
+.faq-form-group input,
+.faq-form-group textarea {width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px;font-family: inherit;}
+.faq-form-group textarea {min-height: 120px;resize: vertical;}
+.faq-form-group input:focus,
+.faq-form-group textarea:focus {outline: none; border-color: #b22222;}
+/* Tombol Form */
+.faq-form-actions {display: flex; align-items: center; gap: 10px; margin-top: 20px;}
+.faq-btn-save,
+.faq-btn-cancel {padding: 11px 20px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none;}
+.faq-btn-save {background: #b22222; color: #fff;}
+.faq-btn-save:hover {background: #941b1b;}
+.faq-btn-cancel {background: #eee;color: #444;}
+/* Jumlah FAQ dan Tabel*/
+.faq-total {padding: 8px 10px; border-radius: 8px; background: #b22222; font-size: 14px;color: #ffffff;}
+.faq-table-wrap {width: 100%; overflow-x: auto;}
+.faq-table {width: 100%; min-width: 650px; table-layout: fixed;border-collapse: collapse;}
+.faq-table th,
+.faq-table td {padding: 16px 12px; border-bottom: 1px solid #eee; text-align: left; vertical-align: middle; font-size: 15px; line-height: 1.6;}
+.faq-table th {background: #fff5f5; font-weight: 700; color: #444;}
+.faq-table .col-number {width: 8%;}
+.faq-table .col-question {width: 29%;}
+.faq-table .col-answer {width: 51%;}
+.faq-table .col-action {width: 12%;}
+.faq-table .faq-action-heading,
+.faq-table .faq-action-cell {text-align: center;}
+.faq-table .faq-action-cell {padding-left: 5px; padding-right: 5px; white-space: nowrap;}
+
+/* Tombol Edit dan Hapus */
+.faq-action-buttons {display: flex; justify-content: center; align-items: center; gap: 8px;}
+.faq-action-buttons form {margin: 0; display: flex;}
+.faq-icon-btn {width: 36px; height: 36px; display: flex; justify-content: center; align-items: center; border: none; border-radius: 7px; cursor: pointer;}
+.faq-icon-btn svg {width: 18px;height: 18px;}
+.faq-edit {background: #fff0d9;color: #bd7815;}
+.faq-delete {background: #ffe5e5;color: #c62828;}
+.faq-edit:hover {background: #bd7815;color: #fff;}
+.faq-delete:hover {background: #c62828;color: #fff;}
+/* Data Kosong */
+.faq-empty {text-align: center !important; padding: 28px !important; color: #888;font-size: 15px;}
+
+/* Responsive FAQ */
+@media (max-width: 768px) {
+    .faq-page {padding: 16px;}
+    .faq-form-card,
+    .faq-list-card {padding: 16px;}
+    .faq-header h2 {font-size: 24px;}
+    .faq-card-header h3 {font-size: 18px;}
+}
