@@ -24,8 +24,8 @@ include __DIR__ . '/../../includes/header.php';
 
 <div class="detail-wrap">
   <div class="detail-img">
-    <img src="<?= BASE_URL ?>/assets/img/<?= clean($produk['gambar']) ?>" alt="<?= clean($produk['nama_produk']) ?>">
-  </div>
+  <img src="<?= BASE_URL ?>/uploads/produk/<?= clean($produk['gambar']) ?>" alt="<?= clean($produk['nama_produk']) ?>">
+</div>
   <div class="detail-info">
     <div class="product-cat"><?= clean($produk['nama_kategori']) ?></div>
     <h1><?= clean($produk['nama_produk']) ?></h1>
@@ -97,8 +97,8 @@ include __DIR__ . '/../../includes/header.php';
   <?php foreach ($terkait as $p): ?>
     <a href="<?= BASE_URL ?>/modules/katalog/detail.php?id=<?= $p['id'] ?>" class="product-card">
       <div class="product-thumb">
-        <img src="<?= BASE_URL ?>/assets/img/<?= clean($p['gambar']) ?>" alt="<?= clean($p['nama_produk']) ?>">
-      </div>
+  <img src="<?= BASE_URL ?>/uploads/produk/<?= clean($p['gambar']) ?>" alt="<?= clean($p['nama_produk']) ?>">
+</div>
       <div class="product-info">
         <div class="product-cat">
           <?= clean($produk['nama_kategori'])?>
