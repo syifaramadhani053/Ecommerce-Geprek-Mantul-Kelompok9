@@ -6,7 +6,7 @@ include __DIR__ . '/../../includes/header.php';
 
 <div class="about-wrap">
   <div class="about-img">
-    <img src="<?= BASE_URL ?>/assets/img/banner.jpg" alt="Ayam Geprek Mantul">
+    <img src="<?= BASE_URL ?>/uploads/produk/<?= clean($p['gambar']) ?>" alt="<?= clean($p['nama_produk']) ?>">
   </div>
 
   <div class="about-text">
